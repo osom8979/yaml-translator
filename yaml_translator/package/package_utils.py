@@ -15,4 +15,5 @@ def get_module_directory(module: ModuleType) -> str:
         assert isinstance(module_file, str)
         return os.path.dirname(module_file)
 
-    raise RuntimeError(f"The '{module.__name__}' module path is unknown")
+    module_name = getattr(module, "__name__", "<unknown>")
+    raise RuntimeError(f"The '{module_name}' module path is unknown")

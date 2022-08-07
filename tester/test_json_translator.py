@@ -44,10 +44,10 @@ class JsonTranslatorTestCase(TestCase):
 
     def test_default(self):
         trans = Translator.from_dir(self.temp.name, "en")
-        self.assertEqual("en-f1-s1-t1", trans.t("f1.s1.t1"))
+        self.assertEqual("en-f1-s1-t1", trans("f1.s1.t1"))
 
         trans.lang = "ko"
-        self.assertEqual("ko-f1-s1-t1", trans.t("f1.s1.t1"))
+        self.assertEqual("ko-f1-s1-t1", trans("f1.s1.t1"))
 
 
 if __name__ == "__main__":

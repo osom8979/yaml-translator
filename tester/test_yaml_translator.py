@@ -50,20 +50,20 @@ class YamlTranslatorTestCase(TestCase):
 
     def test_default(self):
         trans = Translator.from_dir(self.temp.name, "en")
-        self.assertEqual("en-f1-s1", trans.t("f1.s1"))
-        self.assertEqual("en-f1-s2", trans.t("f1.s2"))
-        self.assertEqual("en-f2-s1", trans.t("f2.s1"))
-        self.assertEqual("en-f2-s2", trans.t("f2.s2"))
+        self.assertEqual("en-f1-s1", trans("f1.s1"))
+        self.assertEqual("en-f1-s2", trans("f1.s2"))
+        self.assertEqual("en-f2-s1", trans("f2.s1"))
+        self.assertEqual("en-f2-s2", trans("f2.s2"))
 
         trans.lang = "ko"
-        self.assertEqual("ko-f1-s1", trans.t("f1.s1"))
-        self.assertEqual("ko-f1-s2", trans.t("f1.s2"))
-        self.assertEqual("ko-f2-s1", trans.t("f2.s1"))
-        self.assertEqual("ko-f2-s2", trans.t("f2.s2"))
+        self.assertEqual("ko-f1-s1", trans("f1.s1"))
+        self.assertEqual("ko-f1-s2", trans("f1.s2"))
+        self.assertEqual("ko-f2-s1", trans("f2.s1"))
+        self.assertEqual("ko-f2-s2", trans("f2.s2"))
 
         # Fallback
-        self.assertEqual("en-f3-s1-t1", trans.t("f3.s1.t1"))
-        self.assertEqual("a-K-b", trans.t("f4", arg="K"))
+        self.assertEqual("en-f3-s1-t1", trans("f3.s1.t1"))
+        self.assertEqual("a-K-b", trans("f4", arg="K"))
 
 
 if __name__ == "__main__":

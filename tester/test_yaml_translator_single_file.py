@@ -17,7 +17,7 @@ ko:
 """
 
 
-class YamlSingleTranslatorTestCase(TestCase):
+class YamlTranslatorSingleFileTestCase(TestCase):
     def setUp(self):
         self.temp = TemporaryDirectory()
         self.single_yaml = os.path.join(self.temp.name, "single.yaml")
