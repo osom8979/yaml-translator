@@ -33,7 +33,7 @@ menu:
 ```
 
 - <i>See "[Installing Package Data](https://docs.python.org/3/distutils/setupscript.html#distutils-installing-package-data)"
-for how to add a yaml file to your deployment package.<i>
+for how to add a yaml file to your deployment package.</i>
 
 
 Import package:
